@@ -3,10 +3,10 @@ import ResourceCard from '../../components/ResourceCard';
 import Section from '../../components/Section';
 
 
-const ResourceView = () => (
+const ResourcesShow = () => (
   <Section>
     <ResourceCard />
   </Section>
 );
 
-export default ResourceView;
+export default ResourcesShow;
