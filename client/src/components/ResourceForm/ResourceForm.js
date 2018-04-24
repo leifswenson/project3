@@ -1,46 +1,124 @@
-import React from "react";
+import React, { Component } from "react";
 import "./ResourceForm.css";
+import API from "../../utils/API";
 
-const ResourceForm = props => (
-  <div className="form">
-    <h2>This is the resource form</h2>
-    	<form>
-           <div class="form-group">
-		    <label for="resource">Resource</label>
-		    <input type="email" class="form-control" id="resource" placeholder="1st Grade Books">
-		  </div>
-		  <div class="form-group">
-		    <label for="categorySelect">Category</label>
-		    <select class="form-control" id="categorySelect">
-		      <option>Recreation</option>
-		      <option>Books</option>
-		      <option>Supplies</option>
-		      <option>Technology</option>
-		      <option>Other</option>
-		    </select>
-		  </div>
-		  <div class="form-group">
-		    <label for="School_Name">School Name/label>
-		    <input type="email" class="form-control" id="School_Name" placeholder="Bridgemount High">
-		  </div>
-		  <div class="form-group">
-		    <label for="School_Location">Email address</label>
-		    <input type="email" class="form-control" id="School_Location" placeholder="Minneapolis, MN">
-		  </div>
-		  <div class="form-group">
-		    <label for="Quantity">Quantity</label>
-		    <input type="email" class="form-control" id="Quantity" placeholder="5">
-		  </div>
-		  <div class="form-group">
-		    <label for="Description">Description</label>
-		    <textarea class="form-control" id="Description" rows="3" placeholder="Type your description here"></textarea>
-		  </div>
-		  <div class="form-group">
-		  	<input class="btn btn-primary" type="submit" value="Submit">
-		  </div>
-         </form>
+class ResourceForm extends Component {
+  state = {
+    title: "",
+    category: "",
+    school: "",
+    school_location: "",
+    quantity: "",
+    description: ""
+  };
 
-  </div>
-);
+  componentDidMount() {
+    this.loadresources();
+  }
+
+  loadresources = () => {
+    API.getresources()
+      .then(res =>
+        this.setState({ resources: res.data, title: "", category: "", school: "", school_location: "", quantity: "", description: "" })
+      )
+      .catch(err => console.log(err));
+  };
+
+  deleteresource = id => {
+    API.deleteresource(id)
+      .then(res => this.loadresources())
+      .catch(err => console.log(err));
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.title && this.state.category) {
+      API.saveresource({
+        title: this.state.title,
+        category: this.state.category,
+        school: this.state.school,
+        school_location: this.state.school_location,
+        quantity: this.state.quantity,
+        description: this.state.description
+      })
+        .then(res => this.loadresources())
+        .catch(err => console.log(err));
+    }
+  };
+
+  render() {
+    return (
+      <div className ="container">
+        <div className="row">
+          <div className="md-12">
+            <form>
+            	<div className="form-group">
+	            	<label for="title">Title</label>
+	              <input
+	                value={this.state.title}
+	                onChange={this.handleInputChange}
+	                name="title"
+	              />
+              </div>
+              <div className="form-group">
+	            	<label for="category">Category</label>
+	              <input
+	                value={this.state.category}
+	                onChange={this.handleInputChange}
+	                name="category"
+	              />
+              </div>
+              <div className="form-group">
+	            	<label for="school">School</label>
+	              <input
+	                value={this.state.school}
+	                onChange={this.handleInputChange}
+	                name="school"
+	              />
+              </div>
+              <div className="form-group">
+	            	<label for="school_location">School Location</label>
+	              <input
+	                value={this.state.school_location}
+	                onChange={this.handleInputChange}
+	                name="school_location"
+	              />
+              </div>
+              <div className="form-group">
+	            	<label for="quantity">Quantity</label>
+	              <input
+	                value={this.state.quantity}
+	                onChange={this.handleInputChange}
+	                name="quantity"
+	              />
+              </div>
+              <div className="form-group">
+	            	<label for="description">Description</label>
+	              <input
+	                value={this.state.description}
+	                onChange={this.handleInputChange}
+	                name="description"
+	              />
+              </div>
+              <button
+                disabled={!(this.state.title && this.state.category)}
+                onClick={this.handleFormSubmit}
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 
 export default ResourceForm;
