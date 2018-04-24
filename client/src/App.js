@@ -25,7 +25,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={About} />
               <Route exact path="/resources" component={ResourcesIndex} />
-              <Route exact path="/resources/:id" component={ResourcesShow} />
+              <Route exact path="/resources/id" component={ResourcesShow} />
               <Route exact path="/resources/new" component={ResourcesNew} />
               <Route component={NoMatch} />
             </Switch>
