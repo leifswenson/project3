@@ -15,6 +15,7 @@ export default {
   },
   // Saves a resource to the database
   saveresource: function(resourceData) {
+    // alert("save resource in api")
     return axios.post("/api/resources", resourceData);
   }
 };

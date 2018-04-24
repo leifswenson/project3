@@ -39,6 +39,7 @@ class ResourceForm extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    // alert("You added a resource.")
     if (this.state.title && this.state.category) {
       API.saveresource({
         title: this.state.title,
