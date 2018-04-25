@@ -2,7 +2,8 @@ const router = require("express").Router();
 const resourcesController = require("../../controllers/resourcesController");
 
 // Matches with "/api/resources"
-router.route("/resources")
+router
+  .route("/resources")
   .get(resourcesController.findAll)
   .post(resourcesController.create);
 
@@ -12,5 +13,10 @@ router
   .get(resourcesController.findById)
   .put(resourcesController.update)
   .delete(resourcesController.remove);
+  
+// Matches with "api/resources/new"
+router
+  .route("/resources/new")
+  .post(resourcesController.create);
 
 module.exports = router;
