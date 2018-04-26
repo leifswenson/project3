@@ -4,9 +4,9 @@ import "./Navbar.css";
 
 
 const Navbar = props => (
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-dark">
     <Link className="navbar-brand" to="/">
-      School Scource
+      School Source
     </Link>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
