@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise;
 // This file empties the resources collection and inserts the resources below
 
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist",
+  process.env.MONGODB_URI || "mongodb://localhost/schoolsource",
   {
     useMongoClient: true
   }

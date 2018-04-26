@@ -3,20 +3,20 @@ const resourcesController = require("../../controllers/resourcesController");
 
 // Matches with "/api/resources"
 router
-  .route("/resources")
+  .route("/")
   .get(resourcesController.findAll)
   .post(resourcesController.create);
 
 // Matches with "/api/resources/:id"
 router
-  .route("/resources/:id")
+  .route("/:id")
   .get(resourcesController.findById)
   .put(resourcesController.update)
   .delete(resourcesController.remove);
   
 // Matches with "api/resources/new"
 router
-  .route("/resources/new")
+  .route("/new")
   .post(resourcesController.create);
 
 module.exports = router;
