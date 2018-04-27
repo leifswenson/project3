@@ -36,11 +36,10 @@ class ResourceCard extends Component {
           <th scope="col">Description</th>
         </tr>
       </thead>
-      
         {this.state.resources.length ? (
           <tbody>
             {this.state.resources.map(resource => (
-              <tr>
+              <tr key={resource._id}>
                 <td>{resource.title}</td>
                 <td>{resource.category}</td>
                 <td>{resource.school}</td>
@@ -51,15 +50,16 @@ class ResourceCard extends Component {
             ))}
           </tbody>
         ) : (
-          <tr className="text-center">
-            <td colspan="6">
-              <h3>
-                No Resources to claim!
-              </h3>
-            </td>
-          </tr>
+          <tbody>
+            <tr className="text-center">
+              <td colspan="6">
+                <h3>
+                  No School Resources to Claim!
+                </h3>
+              </td>
+            </tr>
+          </tbody>
         )}
-      
     </table>
     );
   }
