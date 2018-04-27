@@ -63,6 +63,7 @@ class ResourceForm extends Component {
             	<div className="form-group">
 	            	<label for="title">Title</label>
 	              <input
+                  className="form-control" 
 	                value={this.state.title}
 	                onChange={this.handleInputChange}
 	                name="title"
@@ -71,6 +72,7 @@ class ResourceForm extends Component {
               <div className="form-group">
 	            	<label for="category">Category</label>
 	              <input
+                  className="form-control" 
 	                value={this.state.category}
 	                onChange={this.handleInputChange}
 	                name="category"
@@ -79,6 +81,7 @@ class ResourceForm extends Component {
               <div className="form-group">
 	            	<label for="school">School</label>
 	              <input
+                  className="form-control" 
 	                value={this.state.school}
 	                onChange={this.handleInputChange}
 	                name="school"
@@ -87,6 +90,7 @@ class ResourceForm extends Component {
               <div className="form-group">
 	            	<label for="school_location">School Location</label>
 	              <input
+                  className="form-control" 
 	                value={this.state.school_location}
 	                onChange={this.handleInputChange}
 	                name="school_location"
@@ -95,6 +99,7 @@ class ResourceForm extends Component {
               <div className="form-group">
 	            	<label for="quantity">Quantity</label>
 	              <input
+                  className="form-control" 
 	                value={this.state.quantity}
 	                onChange={this.handleInputChange}
 	                name="quantity"
@@ -103,6 +108,7 @@ class ResourceForm extends Component {
               <div className="form-group">
 	            	<label for="description">Description</label>
 	              <input
+                  className="form-control" 
 	                value={this.state.description}
 	                onChange={this.handleInputChange}
 	                name="description"

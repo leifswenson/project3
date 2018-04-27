@@ -19,7 +19,9 @@ class App extends Component {
   render() {
     return (
       <Router>
-        <div class="app">
+        <div className="app">
+        {/*above div had class="app", changed it to 
+        className="app", but don't know what it does*/}
           <Navbar />
           <div className="container">
             <Switch>
