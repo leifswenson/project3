@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
-import "./ResourceCard.css";
+import "./ResourceTable.css";
 
 class ResourceCard extends Component { 
 
