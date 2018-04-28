@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 
 const Navbar = props => (
-  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+  <nav className="navbar navbar-expand-lg navbar-dark">
     <Link className="navbar-brand" to="/">
       School Source
     </Link>
