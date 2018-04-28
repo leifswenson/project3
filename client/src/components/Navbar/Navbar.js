@@ -4,7 +4,7 @@ import "./Navbar.css";
 
 
 const Navbar = props => (
-  <nav className="navbar navbar-dark">
+  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
     <Link className="navbar-brand" to="/">
       School Source
     </Link>
@@ -26,6 +26,18 @@ const Navbar = props => (
         <li className="nav-item">
           <Link to="/resources" className="nav-link">
             Search
+          </Link>
+        </li>
+      </ul>
+      <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link to="/" className="nav-link">
+            Log in
+          </Link>
+        </li>
+        <li className="nav-item">
+          <Link to="/" className="nav-link">
+            Log out
           </Link>
         </li>
       </ul>
