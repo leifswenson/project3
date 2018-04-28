@@ -1,11 +1,11 @@
 import React from "react";
-import ResourceCard from '../../components/ResourceCard';
+import ResourceTable from '../../components/ResourceTable';
 import Section from '../../components/Section';
 
 
 const ResourcesIndex = () => (
   <Section>
-    <ResourceCard />
+    <ResourceTable />
   </Section>
 );
 
