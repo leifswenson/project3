@@ -7,6 +7,8 @@ import ResourcesIndex from './pages/resources/ResourcesIndex';
 import ResourcesShow from './pages/resources/ResourcesShow';
 import ResourcesNew from './pages/resources/ResourcesNew';
 import NoMatch from './pages/NoMatch/NoMatch';
+import Edit from './pages/users/Edit';
+
 
 // Components
 import Navbar from './components/Navbar';
@@ -29,6 +31,7 @@ class App extends Component {
               <Route exact path="/resources" component={ResourcesIndex} />
               <Route exact path="/resources/id" component={ResourcesShow} />
               <Route exact path="/resources/new" component={ResourcesNew} />
+              <Route exact path="/user/edit" component={Edit} />
               <Route component={NoMatch} />
             </Switch>
           </div>
