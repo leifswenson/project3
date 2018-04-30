@@ -1,6 +1,6 @@
 # School Source
 
-###[Deployed App](https://schoolsource.herokuapp.com/)
+### [Deployed App](https://schoolsource.herokuapp.com/)
 
 
 ### Description
