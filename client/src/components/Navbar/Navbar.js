@@ -36,8 +36,8 @@ const Navbar = props => (
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/" className="nav-link">
-            Log out
+          <Link to="/user/edit" className="nav-link">
+            Sign Up
           </Link>
         </li>
       </ul>
