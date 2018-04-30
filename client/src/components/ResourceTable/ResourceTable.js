@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import "./ResourceTable.css";
 
-class ResourceCard extends Component { 
+class ResourceTable extends Component { 
 
   state = {
     resources: []
@@ -65,4 +65,4 @@ class ResourceCard extends Component {
   }
 }
 
-export default ResourceCard;
+export default ResourceTable;
