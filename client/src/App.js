@@ -6,8 +6,9 @@ import About from "./pages/About";
 import ResourcesIndex from './pages/resources/ResourcesIndex';
 import ResourcesShow from './pages/resources/ResourcesShow';
 import ResourcesNew from './pages/resources/ResourcesNew';
-import NoMatch from './pages/NoMatch/NoMatch';
 import UsersNew from './pages/users/UsersNew';
+import NoMatch from './pages/NoMatch/NoMatch';
+
 
 
 // Components
