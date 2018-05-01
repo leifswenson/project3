@@ -36,7 +36,7 @@ class UserTable extends Component {
           <tbody>
             {this.state.users.map(user => (
               <tr key={user._id}>
-                <td>{user.title}</td>
+                <td>{user.fullname}</td>
                 <td>{user.school}</td>
 
               </tr>
