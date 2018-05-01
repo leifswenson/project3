@@ -1,3 +1,4 @@
 module.exports = {
-  Resource: require("./resource")
+  Resource: require("./resource"),
+  User: require("./user")
 };

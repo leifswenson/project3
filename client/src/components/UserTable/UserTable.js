@@ -47,7 +47,7 @@ class UserTable extends Component {
             <tr className="text-center">
               <td colspan="6">
                 <h3>
-                  No School users to Claim!
+                  No Users!
                 </h3>
               </td>
             </tr>
