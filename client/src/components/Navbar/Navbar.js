@@ -36,7 +36,7 @@ const Navbar = props => (
           </Link>
         </li>
         <li className="nav-item">
-          <Link to="/user/edit" className="nav-link">
+          <Link to="/users/new" className="nav-link">
             Sign Up
           </Link>
         </li>
