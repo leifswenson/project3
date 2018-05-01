@@ -7,6 +7,7 @@ import ResourcesIndex from './pages/resources/ResourcesIndex';
 import ResourcesShow from './pages/resources/ResourcesShow';
 import ResourcesNew from './pages/resources/ResourcesNew';
 import UsersNew from './pages/users/UsersNew';
+import UsersIndex from './pages/users/UsersIndex';
 import NoMatch from './pages/NoMatch/NoMatch';
 
 
@@ -33,6 +34,7 @@ class App extends Component {
               <Route exact path="/resources/id" component={ResourcesShow} />
               <Route exact path="/resources/new" component={ResourcesNew} />
               <Route exact path="/users/new" component={UsersNew} />
+              <Route exact path="/users/index" component={UsersIndex} />
               <Route component={NoMatch} />
             </Switch>
           </div>
