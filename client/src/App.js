@@ -31,10 +31,10 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={About} />
               <Route exact path="/resources" component={ResourcesIndex} />
-              <Route exact path="/resources/:id" component={ResourcesShow} />
               <Route exact path="/resources/new" component={ResourcesNew} />
               <Route exact path="/users/new" component={UsersNew} />
-              <Route exact path="/users/index" component={UsersIndex} />
+              <Route exact path="/users" component={UsersIndex} />
+              <Route exact path="/resources/:id" component={ResourcesShow} />
               <Route component={NoMatch} />
             </Switch>
           </div>

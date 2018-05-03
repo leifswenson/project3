@@ -13,10 +13,5 @@ router
   .get(resourcesController.findById)
   .put(resourcesController.update)
   .delete(resourcesController.remove);
-  
-// Matches with "api/resources/new"
-router
-  .route("/new")
-  .post(resourcesController.create);
 
 module.exports = router;
