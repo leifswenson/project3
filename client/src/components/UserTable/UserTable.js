@@ -45,7 +45,7 @@ class UserTable extends Component {
         ) : (
           <tbody>
             <tr className="text-center">
-              <td colspan="6">
+              <td colSpan="6">
                 <h3>
                   No Users!
                 </h3>
