@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import API from "../../utils/API";
 import "./ResourceTable.css";
 
@@ -33,7 +34,7 @@ class ResourceTable extends Component {
           <th scope="col">School</th>
           <th scope="col">Location</th>
           <th scope="col">Quantity</th>
-          <th scope="col">Description</th>
+          <th scope="col"></th>
         </tr>
       </thead>
         {this.state.resources.length ? (
@@ -45,7 +46,7 @@ class ResourceTable extends Component {
                 <td>{resource.school}</td>
                 <td>{resource.school_location}</td>
                 <td>{resource.quantity}</td>
-                <td>{resource.description}</td>
+                <td><Link to={"/resources/" + resource._id}><button type="button" className="btn btn-secondary">View</button></Link></td>
               </tr>
             ))}
           </tbody>
