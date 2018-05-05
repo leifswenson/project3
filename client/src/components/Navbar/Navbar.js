@@ -1,9 +1,18 @@
-import React from "react";
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { GoogleLogin } from 'react-google-login';
 
 
-const Navbar = props => (
+
+class Navbar extends Component {
+  render () {
+   
+    const responseGoogle = (response) => {
+      console.log(response);
+    }
+  
+  return ( 
   <nav className="navbar navbar-expand-lg navbar-dark">
     <Link className="navbar-brand" to="/">
       School Source
@@ -42,6 +51,14 @@ const Navbar = props => (
         </li>
       </ul>
     </div>
+    <div>
+        <GoogleLogin
+          clientId="1018035133373-vv8hfkuii5e1dqce9fg3qsa1t5indmct.apps.googleusercontent.com"
+          buttonText="Login"
+          onSuccess={responseGoogle}
+          onFailure={responseGoogle}
+        />
+    </div>
     <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div className="modal-dialog" role="document">
         <div className="modal-content">
@@ -69,6 +86,6 @@ const Navbar = props => (
       </div>
     </div>
   </nav>
-);
+)}};
 
 export default Navbar;
