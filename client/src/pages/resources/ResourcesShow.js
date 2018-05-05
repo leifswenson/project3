@@ -7,22 +7,21 @@ import API from "../../utils/API";
 class ResourcesShow extends Component {
 
   state = {
-    resource: {
-      // redirect: false
-    }
+    redirect: false,
+    resource: {}
   };
 
-  // setRedirect = () => {
-  //   this.setState({
-  //     redirect: true
-  //   })
-  // }
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
 
-  // renderRedirect = () => {
-  //   if (this.state.redirect) {
-  //     return <Redirect to='/resources'>
-  //   }
-  // }
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/resources'/>
+    }
+  }
 
   componentDidMount() {
     API.getresource(this.props.match.params.id)
@@ -38,14 +37,14 @@ class ResourcesShow extends Component {
 
   deleteresource = id => {
     API.deleteresource(id)
-      .then(res => this.loadresources())
+      .then(res => this.setRedirect())
       .catch(err => console.log(err));
   };
 
   render() {
     return(
       <Section>
-
+      {this.renderRedirect()}
         <div>
           <div className="row">
             <div className="col-md-12">
@@ -67,7 +66,7 @@ class ResourcesShow extends Component {
             <div className="col-md-12">
               <Link to="/resources/"><button type="button" className="btn btn-secondary mr-2">Back</button></Link>
               <button onClick={() => this.deleteresource(this.state.resource._id)} type="button" className="btn btn-secondary mr-2">Delete</button>
-              <button onClick={() => this.deleteresource(this.state.resource._id)} type="button" className="btn btn-secondary mr-2">Edit</button>
+              {/* <button onClick={() => this.deleteresource(this.state.resource._id)} type="button" className="btn btn-secondary mr-2">Edit</button> */}
             </div>
           </div>
         </div>
