@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router-dom';
 import "./ResourceForm.css";
 import API from "../../utils/API";
 
@@ -9,8 +10,21 @@ class ResourceForm extends Component {
     school: "",
     school_location: "",
     quantity: "",
-    description: ""
+    description: "",
+    redirect: false
   };
+
+  setRedirect = () => {
+    this.setState({
+      redirect: true
+    })
+  }
+
+  renderRedirect = () => {
+    if (this.state.redirect) {
+      return <Redirect to='/resources'/>
+    }
+  }
 
   componentDidMount() {
     this.loadresources();
@@ -49,7 +63,7 @@ class ResourceForm extends Component {
         quantity: this.state.quantity,
         description: this.state.description
       })
-        .then(res => this.loadresources())
+        .then(res => this.setRedirect())
         .catch(err => console.log(err));
     }
   };
@@ -57,6 +71,7 @@ class ResourceForm extends Component {
   render() {
     return (
       <div className ="container">
+      {this.renderRedirect()}
         <div className="row">
           <div className="md-12">
             <form>
