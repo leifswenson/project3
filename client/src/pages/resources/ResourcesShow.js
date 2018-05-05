@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { Redirect } from 'react-router-dom'
+import { Redirect } from 'react-router-dom';
 import Section from '../../components/Section';
 import API from "../../utils/API";
 
