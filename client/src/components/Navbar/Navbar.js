@@ -64,19 +64,19 @@ class Navbar extends Component {
 
         {this.state.isSignedIn
         ?
-        <GoogleLogout
+        (<GoogleLogout
           buttonText="Logout"
           onLogoutSuccess={logout}
         >
         </GoogleLogout>
-        :
+        ) : (
         <GoogleLogin
           clientId="1018035133373-vv8hfkuii5e1dqce9fg3qsa1t5indmct.apps.googleusercontent.com"
           buttonText="Login"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
         />
-        }
+        )}
     </div>
     {/* <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div className="modal-dialog" role="document">
