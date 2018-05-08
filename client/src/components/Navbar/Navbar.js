@@ -45,7 +45,7 @@ class Navbar extends Component {
     <div>
 
         <GoogleLogin
-          clientId={process.env.clientIdKey}
+          clientId="1018035133373-vv8hfkuii5e1dqce9fg3qsa1t5indmct.apps.googleusercontent.com"
           buttonText="Login"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
