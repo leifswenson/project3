@@ -14,6 +14,10 @@ class Navbar extends Component {
     const responseGoogle = (response) => {
       console.log(response);
     }
+
+    const logout = (response) => {
+      console.log(response);
+    }
   
   return ( 
   <nav className="navbar navbar-expand-lg navbar-dark">
