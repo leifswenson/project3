@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { GoogleLogin } from 'react-google-login';
+import { GoogleLogout } from 'react-google-login';
+require('dotenv').config(); 
+   
 
 
 
@@ -38,28 +41,23 @@ class Navbar extends Component {
           </Link>
         </li>
       </ul>
-      <ul className="navbar-nav">
-        <li className="nav-item">
-          <Link to="/" className="nav-link" data-toggle="modal" data-target="#loginModal">
-            Log in
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/users/new" className="nav-link">
-            Sign Up
-          </Link>
-        </li>
-      </ul>
     </div>
     <div>
+
         <GoogleLogin
-          clientId="1018035133373-vv8hfkuii5e1dqce9fg3qsa1t5indmct.apps.googleusercontent.com"
+          clientId={process.env.clientIdKey}
           buttonText="Login"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
         />
+
+        <GoogleLogout
+          buttonText="Logout"
+          onLogoutSuccess={logout}
+        >
+        </GoogleLogout>
     </div>
-    <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
+    {/* <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div className="modal-dialog" role="document">
         <div className="modal-content">
           <div className="modal-header">
@@ -84,7 +82,7 @@ class Navbar extends Component {
           </div>
         </div>
       </div>
-    </div>
+    </div> */}
   </nav>
 )}};
 
