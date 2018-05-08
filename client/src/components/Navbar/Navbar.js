@@ -3,22 +3,33 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { GoogleLogin } from 'react-google-login';
 import { GoogleLogout } from 'react-google-login';
-require('dotenv').config(); 
+
    
 
 
 
 class Navbar extends Component {
-  render () {
-   
-    const responseGoogle = (response) => {
-      console.log(response);
-    }
-
-    const logout = (response) => {
-      console.log(response);
-    }
   
+  state = {
+    isSignedIn: false
+  };
+
+  changeSignIn = () => {
+    isSignedIn: true
+  };
+
+  responseGoogle = (response) => {
+    console.log(response);
+    this.changeSignIn();
+    console.log(isSignedIn)
+  };
+
+  logout = (response) => {
+    console.log(response);
+  };
+  
+  
+  render () {
   return ( 
   <nav className="navbar navbar-expand-lg navbar-dark">
     <Link className="navbar-brand" to="/">
@@ -48,18 +59,20 @@ class Navbar extends Component {
     </div>
     <div>
 
+        {responseGoogle.w3.ig ?
+        <GoogleLogout
+          buttonText="Logout"
+          onLogoutSuccess={logout}
+        >
+        </GoogleLogout>
+        :
         <GoogleLogin
           clientId="1018035133373-vv8hfkuii5e1dqce9fg3qsa1t5indmct.apps.googleusercontent.com"
           buttonText="Login"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
         />
-
-        <GoogleLogout
-          buttonText="Logout"
-          onLogoutSuccess={logout}
-        >
-        </GoogleLogout>
+        }
     </div>
     {/* <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div className="modal-dialog" role="document">
