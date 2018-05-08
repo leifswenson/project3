@@ -4,8 +4,6 @@ import "./Navbar.css";
 import { GoogleLogin } from 'react-google-login';
 import { GoogleLogout } from 'react-google-login';
 
-   
-
 
 
 class Navbar extends Component {
@@ -15,25 +13,23 @@ class Navbar extends Component {
   };
 
   changeSignIn = () => {
-    isSignedIn: true
+    if (isSignedIn) {
+      isSignedIn = false;
+    } else {
+      isSignedIn = true;
+    }
   };
 
-  
-  
-  
-  render () {
+  responseGoogle = (response) => {
+    console.log(response);
+  };
 
-    const responseGoogle = (response) => {
-      console.log(response);
-      this.changeSignIn();
-      console.log(isSignedIn)
-    };
-  
-    const logout = (response) => {
-      console.log(response);
-    };
-    
-  return ( 
+  logout = (response) => {
+    console.log(response);
+  };
+
+render () {
+  return (
   <nav className="navbar navbar-expand-lg navbar-dark">
     <Link className="navbar-brand" to="/">
       School Source
@@ -62,19 +58,20 @@ class Navbar extends Component {
     </div>
     <div>
 
-        {this.state.isSignedIn
+        {this.state.isSignedIn === true
         ?
         (<GoogleLogout
+          className="btn btn-secondary float-right login"
           buttonText="Logout"
-          onLogoutSuccess={logout}
-        >
-        </GoogleLogout>
-        ) : (
+          onLogoutSuccess={this.logout}
+        />
+        ) : ( 
         <GoogleLogin
+          className="btn btn-secondary float-right login"
           clientId="1018035133373-vv8hfkuii5e1dqce9fg3qsa1t5indmct.apps.googleusercontent.com"
           buttonText="Login"
-          onSuccess={responseGoogle}
-          onFailure={responseGoogle}
+          onSuccess={this.responseGoogle}
+          onFailure={this.responseGoogle}
         />
         )}
     </div>
