@@ -18,18 +18,21 @@ class Navbar extends Component {
     isSignedIn: true
   };
 
-  responseGoogle = (response) => {
-    console.log(response);
-    this.changeSignIn();
-    console.log(isSignedIn)
-  };
-
-  logout = (response) => {
-    console.log(response);
-  };
+  
   
   
   render () {
+
+    responseGoogle = (response) => {
+      console.log(response);
+      this.changeSignIn();
+      console.log(isSignedIn)
+    };
+  
+    logout = (response) => {
+      console.log(response);
+    };
+    
   return ( 
   <nav className="navbar navbar-expand-lg navbar-dark">
     <Link className="navbar-brand" to="/">
