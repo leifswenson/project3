@@ -53,7 +53,7 @@ class Navbar extends Component {
 
         <GoogleLogout
           buttonText="Logout"
-          onLogoutSuccess={responseGoogle}
+          onLogoutSuccess={logout}
         >
         </GoogleLogout>
     </div>
