@@ -59,7 +59,8 @@ class Navbar extends Component {
     </div>
     <div>
 
-        {responseGoogle.w3.ig ?
+        {this.state.isSignedIn
+        ?
         <GoogleLogout
           buttonText="Logout"
           onLogoutSuccess={logout}
