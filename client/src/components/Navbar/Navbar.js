@@ -23,13 +23,13 @@ class Navbar extends Component {
   
   render () {
 
-    responseGoogle = (response) => {
+    const responseGoogle = (response) => {
       console.log(response);
       this.changeSignIn();
       console.log(isSignedIn)
     };
   
-    logout = (response) => {
+    const logout = (response) => {
       console.log(response);
     };
     
