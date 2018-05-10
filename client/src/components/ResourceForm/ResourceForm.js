@@ -76,7 +76,7 @@ class ResourceForm extends Component {
           <div className="md-12">
             <form>
             	<div className="form-group">
-	            	<label for="title">Title</label>
+	            	<label htmlFor="title">Title</label>
 	              <input
                   className="form-control" 
 	                value={this.state.title}
@@ -85,16 +85,23 @@ class ResourceForm extends Component {
 	              />
               </div>
               <div className="form-group">
-	            	<label for="category">Category</label>
-	              <input
-                  className="form-control" 
+                <label htmlFor="category">Category</label>
+                <select 
+                  className="form-control"
 	                value={this.state.category}
 	                onChange={this.handleInputChange}
-	                name="category"
-	              />
+	                name="category">
+                  <option>Books</option>
+                  <option>Lession Plans</option>
+                  <option>Furniture</option>
+                  <option>Computers</option>
+                  <option>Sports equipment</option>
+                  <option>Lab equipment</option>
+                  <option>Theater props</option>
+                </select>
               </div>
               <div className="form-group">
-	            	<label for="school">School</label>
+	            	<label htmlFor="school">School</label>
 	              <input
                   className="form-control" 
 	                value={this.state.school}
@@ -103,7 +110,7 @@ class ResourceForm extends Component {
 	              />
               </div>
               <div className="form-group">
-	            	<label for="school_location">School Location</label>
+	            	<label htmlFor="school_location">School Location</label>
 	              <input
                   className="form-control" 
 	                value={this.state.school_location}
@@ -112,7 +119,7 @@ class ResourceForm extends Component {
 	              />
               </div>
               <div className="form-group">
-	            	<label for="quantity">Quantity</label>
+	            	<label htmlFor="quantity">Quantity</label>
 	              <input
                   className="form-control" 
 	                value={this.state.quantity}
@@ -121,7 +128,7 @@ class ResourceForm extends Component {
 	              />
               </div>
               <div className="form-group">
-	            	<label for="description">Description</label>
+	            	<label htmlFor="description">Description</label>
 	              <input
                   className="form-control" 
 	                value={this.state.description}
