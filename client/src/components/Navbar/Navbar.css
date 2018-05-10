@@ -7,13 +7,21 @@ h5 {
 }
 
 .btn-custom-logout {
-	background-color: rgba(79,121,83,1);
-	color: rgba(255,255,255,0.75);
+	background-color: rgba(79,121,83,.5);
+	color: rgba(255,255,255,0.5);
 	border-width: 2px;
-	border-color: rgba(255,255,255,0.75);
+	border-color: rgba(255,255,255,0.5);
+}
+
+.btn-custom-logout:hover {
+	background-color: rgba(52,87,56,.8);
 }
 
 .btn-custom-login {
-	background-color: rgba(255,255,255,0.75);
+	background-color: rgba(255,255,255,0.5);
 	color: rgba(79,121,83,1);
+}
+
+.btn-custom-login:hover {
+	background-color: rgba(255,255,255,0.75);
 }
