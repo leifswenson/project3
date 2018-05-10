@@ -1,24 +1,24 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-// import { GoogleLogin } from 'react-google-login';
-// import { GoogleLogout } from 'react-google-login';
+import { GoogleLogin } from 'react-google-login';
+import { GoogleLogout } from 'react-google-login';
 
 
 
 class Navbar extends Component {
   
-  // state = {
-  //   isSignedIn: false
-  // };
+  state = {
+    isSignedIn: false
+  };
 
-  // changeSignIn = () => {
-  //   if (isSignedIn) {
-  //     isSignedIn = false;
-  //   } else {
-  //     isSignedIn = true;
-  //   }
-  // };
+  changeSignIn = () => {
+    if (isSignedIn) {
+      isSignedIn = false;
+    } else {
+      isSignedIn = true;
+    }
+  };
 
   responseGoogle = (response) => {
     console.log(response);
@@ -56,7 +56,7 @@ render () {
         </li>
       </ul>
     </div>
-    {/* <div>
+    <div>
 
         {this.state.isSignedIn === true
         ?
@@ -73,10 +73,9 @@ render () {
           buttonText="Login"
           onSuccess={this.responseGoogle}
           onFailure={this.responseGoogle}
-          onClick={this.changeSignIn}
         />
         )}
-    </div> */}
+    </div>
     {/* <div className="modal fade" id="loginModal" tabIndex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
       <div className="modal-dialog" role="document">
         <div className="modal-content">
