@@ -65,7 +65,7 @@ class ResourcesShow extends Component {
           <div className="row">
             <div className="col-md-12">
               <Link to="/resources/"><button type="button" className="btn btn-secondary mr-2">Back</button></Link>
-              <button onClick={() => this.deleteresource(this.state.resource._id)} type="button" className="btn btn-secondary mr-2">Delete</button>
+              <button onClick={() => this.deleteresource(this.state.resource._id)} type="button" className="btn btn-secondary mr-2">Claim</button>
               {/* <button onClick={() => this.deleteresource(this.state.resource._id)} type="button" className="btn btn-secondary mr-2">Edit</button> */}
             </div>
           </div>
