@@ -61,14 +61,14 @@ render () {
         {this.state.isSignedIn === true
         ?
         (<GoogleLogout
-          className="btn btn-danger float-right login"
+          className="btn btn-custom-logout float-right login"
           clientId="1018035133373-vv8hfkuii5e1dqce9fg3qsa1t5indmct.apps.googleusercontent.com"
           buttonText="Logout"
           onLogoutSuccess={this.logout}
         />
         ) : ( 
         <GoogleLogin
-          className="btn btn-success float-right login"
+          className="btn btn-custom-login float-right login"
           clientId="1018035133373-vv8hfkuii5e1dqce9fg3qsa1t5indmct.apps.googleusercontent.com"
           buttonText="Login"
           onSuccess={this.responseGoogle}
