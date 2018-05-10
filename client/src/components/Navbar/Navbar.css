@@ -5,3 +5,15 @@
 h5 {
   text-align: right;
 }
+
+.btn-custom-logout {
+	background-color: rgba(79,121,83,1);
+	color: rgba(255,255,255,0.75);
+	border-width: 2px;
+	border-color: rgba(255,255,255,0.75);
+}
+
+.btn-custom-login {
+	background-color: rgba(255,255,255,0.75);
+	color: rgba(79,121,83,1);
+}
