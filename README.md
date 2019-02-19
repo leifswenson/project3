@@ -31,5 +31,5 @@ School Source is an app that allow schools to share resources.  If a school has 
 * [Zach Lockner](https://github.com/Lockn008)
 * [Leif Swenson](https://github.com/leifswenson)
 * [Nick Holmin](https://github.com/niholm99)
-* [Dylan Kunitz](https://github.com/dylankuntz)
+* [Dylan Kuntz](https://github.com/dylankuntz)
 * [Kadiro Elemo](https://github.com/kelemo)
